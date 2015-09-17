@@ -1,0 +1,7 @@
+package package1;
+
+public class MultipleClasses {
+	public static void main(String[] args){
+		
+	}
+}
