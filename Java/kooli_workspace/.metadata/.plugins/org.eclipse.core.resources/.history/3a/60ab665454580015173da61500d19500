@@ -1,0 +1,13 @@
+package praktikum2;
+
+public class ylesanne3 {
+
+	public static void main(String[] args){
+		double inimesed, grupisuurus;
+		
+		System.out.println("Kui palju inimesi on?");
+		inimesed = TextIO.getlnDouble();
+		
+		System.out.println("Kui palju inimesi ")
+	}
+}

@@ -1,0 +1,22 @@
+package praktikum2;
+
+import lib.TextIO;
+
+public class ylesanne3 {
+
+	public static void main(String[] args){
+		int inimesed, grupisuurus, gruppe, jaak;
+		
+		System.out.println("Kui palju inimesi on?");
+		inimesed = TextIO.getInt();
+				
+		System.out.println("Kui palju inimesi on grupis?");
+		grupisuurus = TextIO.getInt();
+		
+		gruppe = inimesed / grupisuurus;
+		jaak = inimesed % grupisuurus;
+		
+		System.out.println("Kokku saab moodustada " + gruppe +" gruppi ja inimesi jääb üle " +jaak);
+		
+	}
+}
