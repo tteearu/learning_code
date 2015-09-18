@@ -1,0 +1,21 @@
+package praktikum3;
+
+import java.util.Scanner;
+
+public class CumLaudeDetector {
+	
+	public static void main(String[] args){
+		
+		Double gpa, dissertation;
+		
+		Scanner input = new Scanner(System.in);
+		
+		gpa = input.nextDouble();
+		dissertation = input.nextDouble();
+		
+		
+		input.close();
+		
+	}
+
+}

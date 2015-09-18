@@ -1,0 +1,27 @@
+package praktikum3;
+
+import java.util.Scanner;
+
+public class PasswordChecker {
+	public static void main(String[] args){
+		
+		Scanner input = new Scanner(System.in);
+		
+		String password = "The Quick Brown Fox Jumped Over the Lazy Dog";
+		
+		System.out.println("What's the password?");
+		
+		String guess = input.nextLine();
+		
+		if (password.equals(guess)){
+			System.out.println("That is absolutely correct!");
+		}
+		System.out.println("Noooope");
+		
+		
+		
+		
+		
+	}
+
+}

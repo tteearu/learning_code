@@ -1,0 +1,45 @@
+package praktikum3;
+
+import java.util.Scanner;
+
+public class CumLaudeDetector {
+	
+	public static void main(String[] args){
+		
+		Double gpa, dissertation;
+		
+		Scanner input = new Scanner(System.in);
+		
+		boolean goodinput = false;
+		
+		do {
+			try {
+				goodinput = true;
+				System.out.println("Input your GPA:");
+				gpa = input.nextDouble();
+			
+			if ((gpa < 0) && gpa >5){
+				System.out.println("Input is incorrect. Try again.");
+				goodinput = false;
+			}
+		} catch (Exception e) {
+			System.out.println("Input is not a boolean, try again.");
+			goodinput = false;
+			String clear = input.nextLine();
+		} 
+		} while (!goodinput);
+		
+		System.out.println("Input your dissertation grade:");
+		dissertation = input.nextDouble();
+		
+//		if(gpa > 4.5 && dissertation == 5){
+//			System.out.println("Congratulations! You get a Cum Laude!");
+//		} else {
+//			System.out.println("Sorry, no Cum Laude for you");
+//		}
+//		
+		input.close();
+		
+	}
+
+}
