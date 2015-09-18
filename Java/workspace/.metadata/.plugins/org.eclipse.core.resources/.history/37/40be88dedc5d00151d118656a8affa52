@@ -11,7 +11,9 @@ public class PasswordChecker {
 		
 		System.out.println("What's the password?");
 		
-		System.out.println(input.nextLine().equals(password) ? "That is absoletely correct!" : "WRONG");
+		String guess = input.nextLine();
+		
+		System.out.println(guess.equals(password) ? "That is absoletely correct!" : "WRONG");
 		
 	}
 
