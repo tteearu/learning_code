@@ -13,14 +13,21 @@ def play():
 	while key != Arrow.NONE:
 			# print(key)
 			if key == Arrow.UP:
+				game_board.upkey()
 				game_board.generate_newpiece()
 				game_board.print_board()
 			elif key == Arrow.DOWN:
-				downkey()
+				game_board.downkey()
+				game_board.generate_newpiece()
+				game_board.print_board()
 			elif key == Arrow.LEFT:
-				leftkey()
+				game_board.leftkey()
+				game_board.generate_newpiece()
+				game_board.print_board()
 			elif key == Arrow.RIGHT:
-				rightkey()
+				game_board.rightkey()
+				game_board.generate_newpiece()
+				game_board.print_board()		
 			key = Arrow.input()
 
 	print("None of the arrow keys was pressed")

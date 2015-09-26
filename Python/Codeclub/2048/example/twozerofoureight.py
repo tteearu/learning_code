@@ -18,16 +18,43 @@ class board:
 			print row
 
 	def upkey(self):
-	# print "upkey"
+		# reversed_list = []
+		# 	for row in self.board_list:
+		# 		reversed_list.append([])
+
+		# 	for n in range(len(self.board_list)):
+		# 		reversed_list[n][n] = self.board_list[n][n]
+
 		pass
+
 	def downkey(self):
-	# print "downkey"
+		# print "downkey"
 		pass
 	def leftkey(self):
-		pass
+		for n in range(len(self.board_list)):
+			self.board_list[n] = [x for x in self.board_list[n] if x != 0]
+			try:
+				for i in range(len(self.board_list[n])-1):
+					if self.board_list[n][i+1] == self.board_list[n][i]:
+						self.board_list[n][i] = self.board_list[n][i] * 2
+						del self.board_list[n][i+1]
+			except:
+				pass
+			while len(self.board_list[n]) != 4:
+				self.board_list[n].append(0)
+
 	def rightkey(self):
-	# print "rightkey"
-		pass
+		for n in range(len(self.board_list)):
+			self.board_list[n] = [x for x in self.board_list[n] if x != 0]
+			try:
+				for i in range(len(self.board_list[n])-1):
+					if self.board_list[n][i+1] == self.board_list[n][i]:
+						self.board_list[n][i] = self.board_list[n][i] * 2
+						del self.board_list[n][i+1]
+			except:
+				pass
+			while len(self.board_list[n]) != 4:
+				self.board_list[n].insert(0,0)
 
 	def generate_newpiece(self):
 		x = randrange(0,4)
@@ -40,8 +67,4 @@ class board:
 		else:
 			self.board_list[x][y] = newvalue
 
-	def moveleft(self):
-		
-
-	
-
+	# def moveleft(self):
