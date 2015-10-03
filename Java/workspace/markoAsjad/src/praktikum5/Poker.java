@@ -2,6 +2,7 @@ package praktikum5;
 
 import java.util.Random;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -9,9 +10,31 @@ public class Poker {
 
 	public static void main(String[] args) {
 
+		Card hand[] = {};
+		Scanner input = new Scanner(System.in);
 		Card deck[] = initDeck();
-		Card hand[] = drawCards(deck);
+		hand = drawCards(deck, hand, 5);
+		deck = refreshDeck(deck, hand);
 
+		printHand(hand);
+
+		System.out.println("\nHow many cards do you wish to change?:");
+
+		int changenumbers = input.nextInt();
+
+		for (int i = 0; i < changenumbers; i++) {
+			System.out.printf("Please enter card number %s:\n", i + 1);
+			hand = ArrayUtils.remove(hand, input.nextInt() - 1);
+		}
+
+		hand = drawCards(deck, hand, changenumbers);
+
+		printHand(hand);
+		input.close();
+
+	}
+
+	public static void printHand(Card hand[]) {
 		System.out.println("Your hand is:");
 		int handCounter = 1;
 		for (Card card : hand) {
@@ -39,21 +62,36 @@ public class Poker {
 		return deck;
 	}
 
-	public static Card[] drawCards(Card deck[]) {
-		Card hand[] = new Card[5];
+	public static Card[] drawCards(Card deck[], Card hand[], int n) {
+		Card newhand[] = new Card[n + hand.length];
 		Random rand = new Random();
-		int[] handPositions = new int[5];
 		int num = 0;
 
-		for (int i = 0; i < 5; i++) {
+		if (hand.length != 0) {
+			for (int x = 0; x < hand.length; x++) {
+				newhand[x] = hand[x];
+			}
+		}
+
+		for (int i = hand.length; i < 5; i++) {
 			num = rand.nextInt(deck.length);
-			hand[i] = deck[num];
-			deck = ArrayUtils.remove(deck, i);
+			newhand[i] = deck[num];
+			deck = ArrayUtils.remove(deck, num);
 
 		}
 
-		return hand;
+		return newhand;
 
+	}
+
+	public static Card[] refreshDeck(Card deck[], Card hand[]) {
+
+		for (Card card : hand) {
+			int index = Arrays.asList(deck).indexOf(card);
+			deck = ArrayUtils.remove(deck, index);
+		}
+
+		return deck;
 	}
 
 }
