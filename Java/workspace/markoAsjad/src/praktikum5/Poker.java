@@ -1,10 +1,9 @@
 package praktikum5;
 
-import package1.Tuna;
 import java.util.Random;
 import java.util.Arrays;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class Poker {
 
@@ -13,20 +12,12 @@ public class Poker {
 		Card deck[] = initDeck();
 		Card hand[] = drawCards(deck);
 
-		int handCounter = 0;
+		System.out.println("Your hand is:");
+		int handCounter = 1;
 		for (Card card : hand) {
-			System.out.printf("%s%S\n", card.face(), card.suite());
+			System.out.printf("(%s)%s%S ", handCounter, card.face(), card.suite());
 			handCounter++;
 		}
-
-		// int cardCounter = 0;
-		// for (Card card : deck) {
-		// System.out.printf("%s%S\n", card.face(), card.suite());
-		// cardCounter++;
-		// }
-		// System.out.println(cardcounter);
-		//
-		// System.out.print(deck[1]);
 
 	}
 
@@ -51,11 +42,13 @@ public class Poker {
 	public static Card[] drawCards(Card deck[]) {
 		Card hand[] = new Card[5];
 		Random rand = new Random();
+		int[] handPositions = new int[5];
+		int num = 0;
 
 		for (int i = 0; i < 5; i++) {
-			int num = rand.nextInt(deck.length);
+			num = rand.nextInt(deck.length);
 			hand[i] = deck[num];
-			// deck = ArrayUtils.remove(deck,i);
+			deck = ArrayUtils.remove(deck, i);
 
 		}
 
