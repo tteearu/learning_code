@@ -23,7 +23,8 @@ public class Poker {
 		int changenumbers = input.nextInt();
 
 		for (int i = 0; i < changenumbers; i++) {
-			System.out.printf("Please enter card number %s:\n", i + 1);
+			printHand(hand);
+			System.out.printf("\nPlease enter card number %s:\n", i + 1);
 			hand = ArrayUtils.remove(hand, input.nextInt() - 1);
 		}
 
