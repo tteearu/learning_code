@@ -1,9 +1,0 @@
-package praktikum3;
-
-import java.util.Scanner;
-
-public class ArtificialIntelligence {
-
-	Scanner input = new Scanner();
-	
-}
