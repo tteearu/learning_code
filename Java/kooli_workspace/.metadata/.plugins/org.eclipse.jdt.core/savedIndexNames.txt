@@ -1,3 +1,0 @@
-INDEX VERSION 1.127+/home/marko/learning_code/Java/kooli_workspace/.metadata/.plugins/org.eclipse.jdt.core
-1725674217.index
-3610747120.index
