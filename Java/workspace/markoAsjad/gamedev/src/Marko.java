@@ -11,7 +11,7 @@ public class Marko extends JFrame {
 	}
 
 	public void run(DisplayMode dm) {
-		setBackground(Color.PINK);
+		setBackground(Color.BLACK);
 		setForeground(Color.WHITE);
 		setFont(new Font("Arial", Font.PLAIN, 24));
 
